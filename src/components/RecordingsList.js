@@ -13,10 +13,19 @@ export default function RecordingsList({ audio }) {
   console.log(recordings);
   function searchSong() {
     axios
-      .post("https://api.audd.io/", {
-        api_token: "7269141d9e939973e076ed84543ea3ad",
-        url: recordings[0].audio,
-      })
+      .get(
+        "https://api.audd.io/",
+        {
+          api_token: "7269141d9e939973e076ed84543ea3ad",
+          file: recordings[0].audio,
+          return: "apple_music,spotify",
+        },
+        {
+          Headers: {
+            "content-type": "multipart/form-data",
+          },
+        }
+      )
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }
