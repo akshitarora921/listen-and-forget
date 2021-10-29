@@ -17,7 +17,7 @@ function App() {
         {colorMode === "light" ? "Dark" : "Light"}
       </Button>
       <Heading as='h1' mt='2' size='2xl'>
-        Listen and Forgot
+        Listen and Forget
       </Heading>
     </Flex>
   );
