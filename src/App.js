@@ -9,14 +9,14 @@ function App() {
     <Flex justify='center'>
       <Button
         position='absolute'
-        right='1'
-        top='1'
+        right='3'
+        top='3'
         _focus={{ outline: "none" }}
         onClick={toggleColorMode}
       >
         {colorMode === "light" ? "Dark" : "Light"}
       </Button>
-      <Heading as='h1' size='2xl'>
+      <Heading as='h1' mt='2' size='2xl'>
         Listen and Forgot
       </Heading>
     </Flex>
