@@ -1,6 +1,7 @@
 import { Button } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { Flex, Heading } from "@chakra-ui/layout";
+import Recorder from "./components/Recoder";
 // import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Heading as='h1' mt='2' size='2xl'>
         Listen and Forget
       </Heading>
+      <Recorder />
     </Flex>
   );
 }
