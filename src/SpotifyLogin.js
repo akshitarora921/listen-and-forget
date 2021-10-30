@@ -33,7 +33,7 @@ function SpotifyLogin() {
         if (xhr.status === 200) {
             
         var data = JSON.parse(xhr.responseText);
-         console.log(data)
+        
             if (data.access_token
                 !== undefined) {
                 let access_token = data.access_token;
