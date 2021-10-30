@@ -3,25 +3,45 @@ import { useColorMode } from "@chakra-ui/color-mode";
 import { Flex, Heading } from "@chakra-ui/layout";
 import Recorder from "./components/Recorder";
 // import "./App.css";
+import { SpotifyLogin } from "./SpotifyLogin";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <Flex justify='center' flexDir='column' align='center'>
-      <Button
-        position='absolute'
-        right='3'
-        top='3'
-        _focus={{ outline: "none" }}
-        onClick={toggleColorMode}
-      >
-        {colorMode === "light" ? "Dark" : "Light"}
-      </Button>
-      <Heading as='h1' mt='2' size='2xl'>
-        Listen and Forget
-      </Heading>
-      <Recorder />
-    </Flex>
+    <Router>
+      <Flex justify='center' flexDir='column' align='center'>
+        <Button
+          position='absolute'
+          right='3'
+          top='3'
+          _focus={{ outline: "none" }}
+          onClick={toggleColorMode}
+        >
+          {colorMode === "light" ? "Dark" : "Light"}
+        </Button>
+        <Heading as='h1' mt='2' size='2xl'>
+          Listen and Forget
+        </Heading>
+        <Recorder />
+      </Flex>
+
+      <Switch>
+        <Route exact path='/'>
+          <Button
+            onClick={() => {
+              window.open(process.env.REACT_APP_LOGIN, "_self");
+            }}
+          >
+            Login
+          </Button>
+        </Route>
+        <Route path='/auth'>
+          <SpotifyLogin />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
