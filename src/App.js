@@ -2,10 +2,13 @@ import { Button } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { Flex, Heading } from "@chakra-ui/layout";
 // import "./App.css";
+import SpotifyLogin from "./SpotifyLogin"
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
+  const BaseUri="https://accounts.spotify.com/authorize"
   return (
+    <>
     <Flex justify='center'>
       <Button
         position='absolute'
@@ -19,7 +22,10 @@ function App() {
       <Heading as='h1' mt='2' size='2xl'>
         Listen and Forget
       </Heading>
+     
     </Flex>
+     <SpotifyLogin/>
+     </>
   );
 }
 
