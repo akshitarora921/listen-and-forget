@@ -6,7 +6,7 @@ import SpotifyLogin from "./SpotifyLogin"
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const BaseUri="https://accounts.spotify.com/authorize"
+
   return (
     <>
     <Flex justify='center'>
