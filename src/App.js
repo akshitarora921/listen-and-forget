@@ -2,16 +2,14 @@ import { Button } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { Flex, Heading } from "@chakra-ui/layout";
 // import "./App.css";
-import {SpotifyLogin} from "./SpotifyLogin"
-import { BrowserRouter as Router,Route,Switch } from "react-router-dom";
-
+import { SpotifyLogin } from "./SpotifyLogin";
+import Routes from "./routes/routes";
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Router>
-    <Flex justify='center'>
+    <Flex justify='center' flexDir='column' align='center'>
       <Button
         position='absolute'
         right='3'
@@ -24,22 +22,18 @@ function App() {
       <Heading as='h1' mt='2' size='2xl'>
         Listen and Forget
       </Heading>
-     
+      <Routes />
     </Flex>
-    
-    <Switch>
-      <Route exact path="/">
-      <Button onClick={()=>{
-        window.open(process.env.REACT_APP_LOGIN,"_self")
-    }}>Login</Button>
-      </Route>
-      <Route path="/auth">
-      <SpotifyLogin/>
-     
-      </Route>
-  
-    </Switch>
-     </Router>
+
+    //   <Switch>
+    //     <Route exact path='/'>
+
+    //     </Route>
+    //     <Route path='/auth'>
+    //       <SpotifyLogin />
+    //     </Route>
+    //   </Switch>
+    // </Router>
   );
 }
 
