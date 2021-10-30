@@ -47,7 +47,7 @@ export default function RecordingsList({ audio }) {
             <Heading>YEE!! We find it. ❤️</Heading>
             <Flex>
               <Heading>Song name is&nbsp; </Heading>
-              <Heading color='teal'> {song.result.spotify.name}</Heading>
+              <Heading color='teal'> {song.result.title}</Heading>
             </Flex>
             <Button colorScheme='telegram' mt='4'>
               Add to spotify playlist
