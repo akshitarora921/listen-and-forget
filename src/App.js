@@ -2,7 +2,9 @@ import { Button } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
 // import { Flex, Heading } from "@chakra-ui/layout";
 import Landing from "./components/Landing";
-import About from "./components/About";
+import About from "./components/aboutPage/About"
+import Footer from "./Footer";
+
 import Dashboard from "./components/dashboard/Dashboard";
 // import "./App.css";
 
@@ -22,7 +24,8 @@ function App() {
       </Button>
       
        <Landing/>
-       {/* <About/>  */}
+       <About/> 
+       <Footer/>
     {/* </Flex>  */}
       {/* <Dashboard/> */}
     </>
