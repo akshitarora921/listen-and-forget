@@ -1,12 +1,16 @@
 import { Button } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
-import { Flex, Heading } from "@chakra-ui/layout";
+// import { Flex, Heading } from "@chakra-ui/layout";
+import Landing from "./components/Landing";
+import About from "./components/About";
+import Dashboard from "./components/dashboard/Dashboard";
 // import "./App.css";
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Flex justify='center'>
+    <>
+     {/* <Flex justify='center'> */}
       <Button
         position='absolute'
         right='1'
@@ -16,10 +20,12 @@ function App() {
       >
         {colorMode === "light" ? "Dark" : "Light"}
       </Button>
-      <Heading as='h1' size='2xl'>
-        Listen and Forgot
-      </Heading>
-    </Flex>
+      
+       <Landing/>
+       {/* <About/>  */}
+    {/* </Flex>  */}
+      {/* <Dashboard/> */}
+    </>
   );
 }
 
