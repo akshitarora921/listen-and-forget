@@ -26,12 +26,16 @@ function App() {
       </Heading>
      
     </Flex>
+    
     <Switch>
       <Route exact path="/">
-      <SpotifyLogin/>
+      <Button onClick={()=>{
+        window.open(process.env.REACT_APP_LOGIN,"_self")
+    }}>Login</Button>
       </Route>
       <Route path="/auth">
-      
+      <SpotifyLogin/>
+     
       </Route>
   
     </Switch>
