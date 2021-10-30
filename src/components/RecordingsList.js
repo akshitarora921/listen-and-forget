@@ -6,28 +6,50 @@ import {
 import useRecordingsList from "../hooks/use-recordings-list";
 import { Button } from "@chakra-ui/button";
 import axios from "axios";
-// import "./styles.css";
+import { ffmpeg } from "ffmpeg";
+import { fs } from "../handlers/recorder-controls";
+// import fs from "fs";
 
 export default function RecordingsList({ audio }) {
   const { recordings, deleteAudio } = useRecordingsList(audio);
   console.log(recordings);
   function searchSong() {
+    var form = new FormData();
+    // ffmpeg(recordings[0].audio)
+    //   .format("mp3")
+    //   .save("music.mp3")
+    //   .on("end", async () => {
+    form.append("api_token", "7269141d9e939973e076ed84543ea3ad");
+    form.append("file", recordings[0].audio);
+    form.append("return", "apple_music, spotify");
+    var configs = {
+      headers: {
+        "content-type": "multipart/formdata",
+      },
+    };
     axios
-      .get(
-        "https://api.audd.io/",
-        {
-          api_token: "7269141d9e939973e076ed84543ea3ad",
-          file: recordings[0].audio,
-          return: "apple_music,spotify",
-        },
-        {
-          Headers: {
-            "content-type": "multipart/form-data",
-          },
-        }
-      )
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
+      .post("https://api.audd.io/", form, configs)
+      .then(async (response) => {
+        var res = response.data;
+        // if (res === "success") {
+        //   await message.client.sendMessage(
+        //     message.jid,
+        //     `Título: ${res.title}\nArtista: ${res.artist}`,
+        //     MessageType.text
+        //   );
+        console.log(res);
+        // } else {
+        //   await message.client.sendMessage(
+        //     message.jid,
+        //     "*Canción no encontrada...*",
+        //     MessageType.text
+        //   );
+        // }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    // });
   }
   return (
     <div className='recordings-container'>
