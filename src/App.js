@@ -1,10 +1,8 @@
 import { Button } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { Flex, Heading } from "@chakra-ui/layout";
-import Recorder from "./components/Recorder";
 // import "./App.css";
 import { SpotifyLogin } from "./SpotifyLogin";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Routes from "./routes/routes";
 
 function App() {

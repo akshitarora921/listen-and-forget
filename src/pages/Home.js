@@ -1,5 +1,5 @@
 import { Button } from "@chakra-ui/button";
-import { Flex, Heading } from "@chakra-ui/layout";
+import { Flex } from "@chakra-ui/layout";
 import React from "react";
 import Recorder from "../components/Recorder";
 
