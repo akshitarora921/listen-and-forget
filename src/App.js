@@ -2,7 +2,7 @@ import { Button } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { Flex, Heading } from "@chakra-ui/layout";
 // import "./App.css";
-import { SpotifyLogin } from "./SpotifyLogin";
+// import { SpotifyLogin } from "./SpotifyLogin";
 import Routes from "./routes/routes";
 
 function App() {
