@@ -10,7 +10,7 @@ const routeConfig = {
     },
     {
       component: About,
-      path: "/",
+      path: "/aboutus",
       exact: true,
     },
   ],
