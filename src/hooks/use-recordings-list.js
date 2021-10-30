@@ -3,17 +3,14 @@ import { deleteAudio } from "../handlers/recordings-list";
 import generateKey from "../utils/generate-key";
 
 export default function useRecordingsList(audio) {
-  const [recordings, setRecordings] = useState([]);
+  const [recording, setRecording] = useState({});
 
   useEffect(() => {
-    if (audio)
-      setRecordings((prevState) => {
-        return [{ key: generateKey(), audio }];
-      });
+    if (audio) setRecording({ key: generateKey(), audio });
   }, [audio]);
 
   return {
-    recordings,
-    deleteAudio: (audioKey) => deleteAudio(audioKey, setRecordings),
+    recording,
+    deleteAudio: () => deleteAudio(setRecording),
   };
 }

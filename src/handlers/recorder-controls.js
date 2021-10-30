@@ -1,6 +1,3 @@
-import fs from "fs";
-export { fs };
-
 export async function startRecording(setRecorderState) {
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });

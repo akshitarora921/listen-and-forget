@@ -76,9 +76,6 @@ export default function useRecorder() {
         recorder.src = URL.createObjectURL(blob);
         recorder.controls = true;
         recorder.autoplay = true;
-        // sendData(blob);
-        // const blob = new Blob(chunks, { type: "audio/mpeg; codecs=opus" });
-        // chunks = [];
 
         setRecorderState((prevState) => {
           if (prevState.mediaRecorder)

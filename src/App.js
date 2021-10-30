@@ -1,13 +1,13 @@
 import { Button } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { Flex, Heading } from "@chakra-ui/layout";
-import Recorder from "./components/Recoder";
+import Recorder from "./components/Recorder";
 // import "./App.css";
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Flex justify='center'>
+    <Flex justify='center' flexDir='column' align='center'>
       <Button
         position='absolute'
         right='3'

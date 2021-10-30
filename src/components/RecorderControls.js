@@ -2,9 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMicrophone,
   faTimes,
-  faSave,
+  faStop,
 } from "@fortawesome/free-solid-svg-icons";
+import { FaMicrophone, FaStop, FaTimes } from "react-icons/fa";
 import { formatMinutes, formatSeconds } from "../utils/format-time";
+import { Box, Flex } from "@chakra-ui/layout";
+import { Button, IconButton } from "@chakra-ui/button";
 // import "./styles.css";
 
 export default function RecorderControls({ recorderState, handlers }) {
@@ -13,45 +16,51 @@ export default function RecorderControls({ recorderState, handlers }) {
 
   return (
     <div className='controls-container'>
-      <div className='recorder-display'>
-        <div className='recording-time'>
-          {initRecording && <div className='recording-indicator'></div>}
-          <span>{formatMinutes(recordingMinutes)}</span>
-          <span>:</span>
-          <span>{formatSeconds(recordingSeconds)}</span>
-        </div>
-        {initRecording && (
-          <div className='cancel-button-container'>
-            <button
-              className='cancel-button'
-              title='Cancel recording'
+      <Box padding='4' pos='relative'>
+        <Flex justify='center'>
+          {formatSeconds(recordingSeconds) > 0 && (
+            <>
+              <span>{formatMinutes(recordingMinutes)}</span>
+              <span>:</span>
+              <span>{formatSeconds(recordingSeconds)}</span>
+            </>
+          )}
+        </Flex>
+        {formatSeconds(recordingSeconds) > 0 && (
+          <Box position='absolute' right='0' top='0'>
+            <IconButton
+              colorScheme='gray'
               onClick={cancelRecording}
-            >
-              <FontAwesomeIcon icon={faTimes} />
-            </button>
-          </div>
+              icon={<FaTimes size='20px' />}
+            ></IconButton>
+          </Box>
         )}
-      </div>
-      <div className='start-button-container'>
+      </Box>
+      <Box textAlign='center'>
         {initRecording ? (
-          <button
-            className='start-button'
+          <IconButton
+            h='40'
+            w='40'
+            borderRadius='full'
+            colorScheme='red'
+            aria-label='stop-recording'
             title='Save recording'
             disabled={recordingSeconds === 0}
             onClick={saveRecording}
-          >
-            <FontAwesomeIcon icon={faSave} size='2x' />
-          </button>
+            icon={<FaStop size='40px' />}
+          ></IconButton>
         ) : (
-          <button
-            className='start-button'
-            title='Start recording'
+          <IconButton
+            h='40'
+            w='40'
+            borderRadius='full'
+            aria-label='start-recording'
+            colorScheme='blue'
+            icon={<FaMicrophone size='40px' />}
             onClick={startRecording}
-          >
-            <FontAwesomeIcon icon={faMicrophone} size='2x' />
-          </button>
+          ></IconButton>
         )}
-      </div>
+      </Box>
     </div>
   );
 }
