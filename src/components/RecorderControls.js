@@ -1,13 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMicrophone,
-  faTimes,
-  faStop,
-} from "@fortawesome/free-solid-svg-icons";
 import { FaMicrophone, FaStop, FaTimes } from "react-icons/fa";
 import { formatMinutes, formatSeconds } from "../utils/format-time";
 import { Box, Flex } from "@chakra-ui/layout";
-import { Button, IconButton } from "@chakra-ui/button";
+import { IconButton } from "@chakra-ui/button";
 // import "./styles.css";
 
 export default function RecorderControls({ recorderState, handlers }) {
