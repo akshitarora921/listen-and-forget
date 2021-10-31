@@ -1,14 +1,13 @@
-import {Redirect} from "react-router-dom";
-
+import { Redirect } from "react-router-dom";
 
 const TOKEN = "https://accounts.spotify.com/api/token";
-const APIBase="https://api.spotify.com/v1"
+const APIBase = "https://api.spotify.com/v1";
 
 function SpotifyLogin() {
   if (window.location.search.length > 0) {
     AuthToken();
   }
-  return  <Redirect to="/"/>
+  return <Redirect to='/' />;
 }
 function AuthToken() {
   let AuthToken = null;
@@ -40,7 +39,7 @@ function AuthToken() {
   xhr.onload = () => {
     if (xhr.status === 200) {
       var data = JSON.parse(xhr.responseText);
-     
+
       if (data.access_token !== undefined) {
         let access_token = data.access_token;
         localStorage.setItem("access_token", access_token);
@@ -49,15 +48,15 @@ function AuthToken() {
         let refresh_token = data.refresh_token;
         localStorage.setItem("refresh_token", refresh_token);
       }
-    }localStorage.setItem("Login-Status","LogedIn")
+    }
+    localStorage.setItem("Login-Status", "LogedIn");
   };
   window.history.pushState("", "", process.env.REACT_APP_SPOTIFY_REDIRECT);
-  
 }
 
-function addPlaylist(songId){
-  let user_id
-  let playlist_id
+function addPlaylist(songId) {
+  let user_id;
+  // let playlist_id
   /* DEV-NOTE 
   Call This FUnction Like this addPlaylist(["uri"])
   Where songId=["uri"]
@@ -65,51 +64,56 @@ function addPlaylist(songId){
   you can add multiple song in one go passing array of uri like this:
 addPlaylist(["uri1","uri2","uri3",.............,"uriN"]) limit 50 per request
   */
-  let Songs={
-    "uris":songId,
-    "position":0
-  }
- 
-  callApi("GET",APIBase+"/me",null,function(){
-      var data=JSON.parse(this.responseText);
-      if (this.status===200){
-       
-        user_id = data.id
-        callApi("GET",APIBase+"/users/"+user_id+"/playlists?limit=50&offset=0",null,function(){
-          if(this.status===200){
-            var data=JSON.parse(this.responseText);
-            playlist_id= data.items[0].id
-            callApi("POST",APIBase+"/playlists/"+playlist_id+"/tracks",JSON.stringify(Songs),function(){
-              if(this.status===201){
-                console.log("Succesfully added")
+  let Songs = {
+    uris: songId,
+    position: 0,
+  };
+
+  callApi("GET", APIBase + "/me", null, function () {
+    var data = JSON.parse(this.responseText);
+    if (this.status === 200) {
+      user_id = data.id;
+
+      let Playlistdes = {
+        name: "Playlist by listen-and-forget",
+        description: "listen and forget",
+        public: false,
+      };
+      callApi(
+        "POST",
+        APIBase + "/users/" + user_id + "/playlists",
+        JSON.stringify(Playlistdes),
+        function () {
+          var data = JSON.parse(this.responseText);
+          let playlist_id = data.id;
+          callApi(
+            "POST",
+            APIBase + "/playlists/" + playlist_id + "/tracks",
+            JSON.stringify(Songs),
+            function () {
+              if (this.status === 201) {
+                console.log("Succesfully added");
               }
-        
-            })
-            
-          }
-        })
-       
-      }
-    })
-
-  
- 
-  }
-
+            }
+          );
+        }
+      );
+    }
+  });
+}
 
 // let access_token=localStorage.getItem("access_token")
 // let refresh_token=localStorage.getItem("refresh_token")
-function callApi(method,url,body,callback) {
-  let xhr=new XMLHttpRequest();
-  xhr.open(method,url,true)
-  xhr.setRequestHeader("Content-Type", "application/json")
-  xhr.setRequestHeader("Authorization",'Bearer '+localStorage.getItem("access_token"));
+function callApi(method, url, body, callback) {
+  let xhr = new XMLHttpRequest();
+  xhr.open(method, url, true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.setRequestHeader(
+    "Authorization",
+    "Bearer " + localStorage.getItem("access_token")
+  );
   xhr.send(body);
-  xhr.onload=callback;
-
-
-
+  xhr.onload = callback;
 }
 
-
-export { SpotifyLogin,addPlaylist };
+export { SpotifyLogin, addPlaylist };
