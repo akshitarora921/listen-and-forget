@@ -1,6 +1,6 @@
 import About from "../pages/About";
 import Home from "../pages/Home";
-
+import Dashboard from "../pages/Dashboard";
 const routeConfig = {
   routes: [
     {
@@ -10,7 +10,12 @@ const routeConfig = {
     },
     {
       component: About,
-      path: "/aboutus",
+      path: "/about",
+      exact: true,
+    },
+    {
+      component: Dashboard,
+      path: "/dashboard",
       exact: true,
     },
   ],

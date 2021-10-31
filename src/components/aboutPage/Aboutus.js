@@ -8,7 +8,7 @@ import {
     SimpleGrid,
     useColorModeValue,
   } from '@chakra-ui/react';
-  
+  import {TiSocialLinkedinCircular} from 'react-icons'
   const testimonials = [
     {
       name: 'Akshith Arora',
@@ -16,7 +16,10 @@ import {
       content:
         'an enthusiastic full stack webdeveloper with an creative mind Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donecsedimperdiet. Mauris quis erat consequat, commodo massa quis,sapien.',
       avatar:
-        'https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+            'TiSocialLinkedinCircular',
+            linkedIn:
+            'link',
+       
     },
     {
       name: 'Koushik Sherugar',
@@ -24,7 +27,9 @@ import {
       content:
         'an enthusiastic full stack webdeveloper with an creative mind Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donecsedimperdiet. Mauris quis erat consequat, commodo massa quis,sapien.',
       avatar:
-        'https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+        'TiSocialLinkedinCircular',
+        linkedIn:
+        'link',
     },
     {
       name: 'Nithesh Kumar',
@@ -32,7 +37,9 @@ import {
       content:
         'an enthusiastic full stack webdeveloper with an creative mind Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donecsedimperdiet. Mauris quis erat consequat, commodo massa quis,sapien.',
       avatar:
-        'https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+        'TiSocialLinkedinCircular',
+        linkedIn:
+        'link',
     },
     
   ];
@@ -147,7 +154,8 @@ import {
             fontFamily={'Work Sans'}
             fontWeight={'bold'}
             color={useColorModeValue('blue.600', 'gray.50')}>
-            Team Hackit_007
+            Team Hackit_007 
+            {/* <TiSocialLinkedinCircular/> */}
           </chakra.h1>
          
         </Box>
