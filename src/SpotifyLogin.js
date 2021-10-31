@@ -19,9 +19,9 @@ function AuthToken() {
   }
 
   let body = `grant_type=authorization_code&code=${AuthToken}&redirect_uri=${encodeURI(
-    process.env.REACT_APP_REDIRECT
-  )}&client_id=${process.env.REACT_APP_Spotify_CLIENT_ID}&client_secret=${
-    process.env.REACT_APP_Spotify_CLIENT_SECRET
+    process.env.REACT_APP_SPOTIFY_REDIRECT
+  )}&client_id=${process.env.REACT_APP_SPOTIFY_CLIENT_ID}&client_secret=${
+    process.env.REACT_APP_SPOTIFY_CLIENT_SECRET
   }`;
 
   let xhr = new XMLHttpRequest();
@@ -31,9 +31,9 @@ function AuthToken() {
     "Authorization",
     "Basic " +
       btoa(
-        process.env.REACT_APP_Spotify_CLIENT_ID +
+        process.env.REACT_APP_SPOTIFY_CLIENT_ID +
           ":" +
-          process.env.REACT_APP_Spotify_CLIENT_SECRET
+          process.env.REACT_APP_SPOTIFY_CLIENT_SECRET
       )
   );
   xhr.send(body);
@@ -51,7 +51,7 @@ function AuthToken() {
       }
     }localStorage.setItem("Login-Status","LogedIn")
   };
-  window.history.pushState("", "", process.env.REACT_APP_REDIRECT);
+  window.history.pushState("", "", process.env.REACT_APP_SPOTIFY_REDIRECT);
   
 }
 
