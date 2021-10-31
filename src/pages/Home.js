@@ -4,7 +4,7 @@ import React from "react";
 import Recorder from "../components/Recorder";
 import { addPlaylist } from "../SpotifyLogin";
 const BASEURL="https://accounts.spotify.com/authorize";
-const Client_ID=process.env.REACT_APP_Spotify_CLIENT_ID;
+const Client_ID=process.env.REACT_APP_SPOTIFY_CLIENT_ID
 
 
 function Home() {
@@ -26,7 +26,7 @@ function Home() {
           
         else if(localStorage.getItem("Login-Status")==="Logedout" ||localStorage.getItem("Login-Status")===null ){
             
-          window.open(BASEURL+"?client_id="+Client_ID+"&response_type=code&redirect_uri="+process.env.REACT_APP_REDIRECT+"&show_dialog=true&scope=ugc-image-upload playlist-modify-private playlist-read-private user-read-private user-read-playback-state user-library-modify user-read-playback-position user-read-recently-played user-modify-playback-state user-read-currently-playing playlist-read-collaborative user-library-read streaming user-top-read", "_self");
+          window.open(BASEURL+"?client_id="+Client_ID+"&response_type=code&redirect_uri="+process.env.REACT_APP_SPOTIFY_REDIRECT+"&show_dialog=true&scope=ugc-image-upload playlist-modify-private playlist-read-private user-read-private user-read-playback-state user-library-modify user-read-playback-position user-read-recently-played user-modify-playback-state user-read-currently-playing playlist-read-collaborative user-library-read streaming user-top-read", "_self");
          
         }}}
        
