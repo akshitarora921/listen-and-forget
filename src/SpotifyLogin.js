@@ -58,7 +58,13 @@ function AuthToken() {
 function addPlaylist(songId){
   let user_id
   let playlist_id
-  songId=["spotify:track:444Xp2WWzTQREUznLf5xVF"]
+  /* DEV-NOTE 
+  Call This FUnction Like this addPlaylist(["uri"])
+  Where songId=["uri"]
+  uri=spotify:track:<id of Song>
+  you can add multiple song in one go passing array of uri like this:
+addPlaylist(["uri1","uri2","uri3",.............,"uriN"]) limit 50 per request
+  */
   let Songs={
     "uris":songId,
     "position":0
