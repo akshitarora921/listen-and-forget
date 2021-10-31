@@ -34,9 +34,7 @@ function Home() {
       Login With Spotify 
       </Button>
       <Recorder />
-      <Button onClick={()=>{
-        addPlaylist(["spotify:track:444Xp2WWzTQREUznLf5xVF"])
-      }}>add song</Button>
+   
     </Flex>
   );
 }

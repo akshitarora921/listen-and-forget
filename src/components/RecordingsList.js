@@ -3,6 +3,7 @@ import { Button } from "@chakra-ui/button";
 import axios from "axios";
 import { Box, Heading, Flex } from "@chakra-ui/layout";
 import { useState } from "react";
+import {addPlaylist} from "../SpotifyLogin"
 
 export default function RecordingsList({ audio }) {
   const { recording, deleteAudio } = useRecordingsList(audio);
@@ -49,7 +50,11 @@ export default function RecordingsList({ audio }) {
               <Heading>Song name is&nbsp; </Heading>
               <Heading color='teal'> {song.result.title}</Heading>
             </Flex>
-            <Button colorScheme='telegram' mt='4'>
+            <Button colorScheme='telegram' onClick ={
+              () => {
+                addPlaylist([song.result.spotify.uri])
+              }
+            }mt='4'>
               Add to spotify playlist
             </Button>
           </Flex>
