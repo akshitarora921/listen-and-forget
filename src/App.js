@@ -7,13 +7,14 @@ import { useColorMode } from "@chakra-ui/color-mode";
 // import { SpotifyLogin } from "./SpotifyLogin";
 import Routes from "./routes/routes";
 import Footer from "./pages/Footer";
+import { Flex } from "@chakra-ui/layout";
+import Header from "./components/dashboard/Header";
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <>
-      {/* <Flex justify='center' flexDir='column' align='center'> */}
+    <Flex justify='center' flexDir='column' align='center'>
       <Button
         position='absolute'
         right='3'
@@ -26,19 +27,10 @@ function App() {
       {/* <Heading as='h1' mt='2' size='2xl'>
         Listen and Forget
       </Heading> */}
+      <Header />
       <Routes />
       <Footer />
-      {/* </Flex> */}
-    </>
-    //   <Switch>
-    //     <Route exact path='/'>
-
-    //     </Route>
-    //     <Route path='/auth'>
-    //       <SpotifyLogin />
-    //     </Route>
-    //   </Switch>
-    // </Router>
+    </Flex>
   );
 }
 
