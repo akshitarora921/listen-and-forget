@@ -78,13 +78,13 @@ function Home() {
             </Button>
           )}
           <Recorder />
-          <Button
+          {/* <Button
             onClick={() => {
               addPlaylist(["spotify:track:444Xp2WWzTQREUznLf5xVF"]);
             }}
           >
             add song
-          </Button>
+          </Button> */}
         </Stack>
       </Stack>
     </Container>
