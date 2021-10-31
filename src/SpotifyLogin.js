@@ -56,7 +56,7 @@ function AuthToken() {
 
 function addPlaylist(songId) {
   let user_id;
-  let playlist_id;
+  // let playlist_id
   /* DEV-NOTE 
   Call This FUnction Like this addPlaylist(["uri"])
   Where songId=["uri"]
@@ -73,25 +73,29 @@ addPlaylist(["uri1","uri2","uri3",.............,"uriN"]) limit 50 per request
     var data = JSON.parse(this.responseText);
     if (this.status === 200) {
       user_id = data.id;
+
+      let Playlistdes = {
+        name: "Playlist by listen-and-forget",
+        description: "listen and forget",
+        public: false,
+      };
       callApi(
-        "GET",
-        APIBase + "/users/" + user_id + "/playlists?limit=50&offset=0",
-        null,
+        "POST",
+        APIBase + "/users/" + user_id + "/playlists",
+        JSON.stringify(Playlistdes),
         function () {
-          if (this.status === 200) {
-            var data = JSON.parse(this.responseText);
-            playlist_id = data.items[0].id;
-            callApi(
-              "POST",
-              APIBase + "/playlists/" + playlist_id + "/tracks",
-              JSON.stringify(Songs),
-              function () {
-                if (this.status === 201) {
-                  console.log("Succesfully added");
-                }
+          var data = JSON.parse(this.responseText);
+          let playlist_id = data.id;
+          callApi(
+            "POST",
+            APIBase + "/playlists/" + playlist_id + "/tracks",
+            JSON.stringify(Songs),
+            function () {
+              if (this.status === 201) {
+                console.log("Succesfully added");
               }
-            );
-          }
+            }
+          );
         }
       );
     }
