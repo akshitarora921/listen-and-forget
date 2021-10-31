@@ -14,7 +14,7 @@ import {
       name: 'Akshith Arora',
       role: 'Full stack web developer',
       content:
-        'an enthusiastic full stack webdeveloper with an creative mind Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donecsedimperdiet. Mauris quis erat consequat, commodo massa quis,sapien.',
+        'an enthusiastic full stack webdeveloper with an creative mind and ideology and helping his fellow developers in team and taking them forward along with him.',
       avatar:
             'TiSocialLinkedinCircular',
             linkedIn:
@@ -23,9 +23,9 @@ import {
     },
     {
       name: 'Koushik Sherugar',
-      role: 'Full stack web developer',
+      role: 'Frontend web developer, Ui designer',
       content:
-        'an enthusiastic full stack webdeveloper with an creative mind Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donecsedimperdiet. Mauris quis erat consequat, commodo massa quis,sapien.',
+        'frontend reactjs webdeveloper with a vision of solving real world problems and learning to improve knowledge by practical application .',
       avatar:
         'TiSocialLinkedinCircular',
         linkedIn:
@@ -35,7 +35,7 @@ import {
       name: 'Nithesh Kumar',
       role: 'Full stack web developer',
       content:
-        'an enthusiastic full stack webdeveloper with an creative mind Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donecsedimperdiet. Mauris quis erat consequat, commodo massa quis,sapien.',
+        'A python based fullstack backend developer with good knowledge in backend and hosting of websites in different platforms.',
       avatar:
         'TiSocialLinkedinCircular',
         linkedIn:
@@ -57,6 +57,7 @@ import {
     content: string;
     avatar: string;
     index: number;
+
   }
   
   function TestmonialCard(props: TestimonialCardProps) {
@@ -167,7 +168,8 @@ import {
           mr={3}
           mx={'auto'}>
           {testimonials.map((cardInfo, index) => (
-            <TestmonialCard {...cardInfo} index={index} />
+            <TestmonialCard {...cardInfo} index={index} 
+            />
           ))}
         </SimpleGrid>
         <Box>
