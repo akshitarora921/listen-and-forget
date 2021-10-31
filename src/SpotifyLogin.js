@@ -49,7 +49,7 @@ function AuthToken() {
         localStorage.setItem("refresh_token", refresh_token);
       }
     }
-    localStorage.setItem("Login-Status", "LogedIn");
+    localStorage.setItem("Login-Status", "Logged-In");
   };
   window.history.pushState("", "", process.env.REACT_APP_SPOTIFY_REDIRECT);
 }
