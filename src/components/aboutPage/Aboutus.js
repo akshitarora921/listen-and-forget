@@ -1,28 +1,27 @@
 import {
   Avatar,
   Box,
-  chakra,
-  // Container,
   Flex,
   Icon,
   SimpleGrid,
   useColorModeValue,
+  Text,
+  Heading,
 } from "@chakra-ui/react";
-// import {TiSocialLinkedinCircular} from 'react-icons'
 const testimonials = [
   {
     name: "Akshith Arora",
     role: "Full stack web developer",
     content:
-      "an enthusiastic full stack webdeveloper with an creative mind Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donecsedimperdiet. Mauris quis erat consequat, commodo massa quis,sapien.",
+      "an enthusiastic full stack webdeveloper with an creative mind and ideology and helping his fellow developers in team and taking them forward along with him.",
     avatar: "TiSocialLinkedinCircular",
     linkedIn: "link",
   },
   {
     name: "Koushik Sherugar",
-    role: "Full stack web developer",
+    role: "Frontend web developer, Ui designer",
     content:
-      "an enthusiastic full stack webdeveloper with an creative mind Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donecsedimperdiet. Mauris quis erat consequat, commodo massa quis,sapien.",
+      "frontend reactjs webdeveloper with a vision of solving real world problems and learning to improve knowledge by practical application .",
     avatar: "TiSocialLinkedinCircular",
     linkedIn: "link",
   },
@@ -30,7 +29,7 @@ const testimonials = [
     name: "Nithesh Kumar",
     role: "Full stack web developer",
     content:
-      "an enthusiastic full stack webdeveloper with an creative mind Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donecsedimperdiet. Mauris quis erat consequat, commodo massa quis,sapien.",
+      "A python based fullstack backend developer with good knowledge in backend and hosting of websites in different platforms.",
     avatar: "TiSocialLinkedinCircular",
     linkedIn: "link",
   },
@@ -87,25 +86,21 @@ function TestmonialCard(props) {
         textAlign={"left"}
         justifyContent={"space-between"}
       >
-        <chakra.p
+        <Text
           fontFamily={"Inter"}
           fontWeight={"medium"}
           fontSize={"15px"}
           pb={4}
         >
           {content}
-        </chakra.p>
-        <chakra.p fontFamily={"Work Sans"} fontWeight={"bold"} fontSize={14}>
+        </Text>
+        <Text fontFamily={"Work Sans"} fontWeight={"bold"} fontSize={14}>
           {name}
-          <chakra.span
-            fontFamily={"Inter"}
-            fontWeight={"medium"}
-            color={"gray.500"}
-          >
+          <Text fontFamily={"Inter"} fontWeight={"medium"} color={"gray.500"}>
             {" "}
             - {role}
-          </chakra.span>
-        </chakra.p>
+          </Text>
+        </Text>
       </Flex>
       <Avatar
         src={avatar}
@@ -128,7 +123,7 @@ export default function Aboutus() {
       width={"full"}
     >
       <Box width={{ base: "full", sm: "lg", lg: "lg" }} margin={"auto"}>
-        <chakra.h3
+        <Heading
           fontFamily={"Work Sans"}
           fontWeight={"bold"}
           fontSize={20}
@@ -136,8 +131,8 @@ export default function Aboutus() {
           color={"green.400"}
         >
           people behind it
-        </chakra.h3>
-        <chakra.h1
+        </Heading>
+        <Heading
           py={5}
           fontSize={48}
           fontFamily={"Work Sans"}
@@ -146,7 +141,7 @@ export default function Aboutus() {
         >
           Team Hackit_007
           {/* <TiSocialLinkedinCircular/> */}
-        </chakra.h1>
+        </Heading>
       </Box>
       <SimpleGrid
         columns={{ base: 1, xl: 3 }}
