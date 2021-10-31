@@ -1,10 +1,10 @@
 import { Button } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
-import { Flex, Heading } from "@chakra-ui/layout";
+// import { Flex, Heading } from "@chakra-ui/layout";
 
-import Dashboard from "./pages/Dashboard";
+// import Dashboard from "./pages/Dashboard";
 // import "./App.css";
-import { SpotifyLogin } from "./SpotifyLogin";
+// import { SpotifyLogin } from "./SpotifyLogin";
 import Routes from "./routes/routes";
 import Footer from "./pages/Footer";
 
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-    {/* <Flex justify='center' flexDir='column' align='center'> */}
+      {/* <Flex justify='center' flexDir='column' align='center'> */}
       <Button
         position='absolute'
         right='3'
@@ -27,9 +27,8 @@ function App() {
         Listen and Forget
       </Heading> */}
       <Routes />
-      <Footer/>
-    {/* </Flex> */}
-
+      <Footer />
+      {/* </Flex> */}
     </>
     //   <Switch>
     //     <Route exact path='/'>

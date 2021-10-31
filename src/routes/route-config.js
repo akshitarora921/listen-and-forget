@@ -1,6 +1,11 @@
 import About from "../pages/About";
 import Home from "../pages/Home";
+<<<<<<< HEAD
 import Dashboard from "../pages/Dashboard";
+=======
+import {SpotifyLogin} from "../SpotifyLogin"
+
+>>>>>>> main
 const routeConfig = {
   routes: [
     {
@@ -17,7 +22,11 @@ const routeConfig = {
       component: Dashboard,
       path: "/dashboard",
       exact: true,
-    },
+    },{
+      component:SpotifyLogin,
+      path:"/auth",
+      exact:false
+    }
   ],
 };
 
