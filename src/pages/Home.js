@@ -1,12 +1,4 @@
-import {
-  Box,
-  Heading,
-  Container,
-  Text,
-  Button,
-  Stack,
-  Flex,
-} from "@chakra-ui/react";
+import { Box, Heading, Container, Text, Button, Stack } from "@chakra-ui/react";
 
 import React from "react";
 import Recorder from "../components/Recorder";
