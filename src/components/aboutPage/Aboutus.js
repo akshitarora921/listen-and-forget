@@ -8,30 +8,38 @@ import {
   Text,
   Heading,
 } from "@chakra-ui/react";
+import Nktech from "../../assets/images/NiteshKumarProfile.jpg"
+import Dexter from "../../assets/images/AkshitAroraProfile.jpg"
+import Koushik from "../../assets/images/KoushikSherugarProfile.jpg"
+import {ImLinkedin} from "react-icons/im"
+import {BsInstagram} from "react-icons/bs"
 const testimonials = [
   {
     name: "Akshith Arora",
     role: "Full stack web developer",
     content:
-      "an enthusiastic full stack webdeveloper with an creative mind and ideology and helping his fellow developers in team and taking them forward along with him.",
-    avatar: "TiSocialLinkedinCircular",
-    linkedIn: "link",
+      "An enthusiastic full stack webdeveloper with an creative mind and ideology and helping his fellow developers in team and taking them forward along with him.",
+    avatar: Dexter,
+    linkedIn: "https://www.linkedin.com/in/akshit-arora/",
+    Instagram:"https://www.instagram.com/_arorakshit/",
   },
   {
     name: "Koushik Sherugar",
     role: "Frontend web developer, Ui designer",
     content:
-      "frontend reactjs webdeveloper with a vision of solving real world problems and learning to improve knowledge by practical application .",
-    avatar: "TiSocialLinkedinCircular",
-    linkedIn: "link",
+      "Frontend reactjs webdeveloper with a vision of solving real world problems and learning to improve knowledge by practical application .",
+    avatar: Koushik,
+    linkedIn: "https://www.linkedin.com/in/koushik-sherugar-7a45a7211/",
+    Instagram:"https://www.instagram.com/kaushik_sherugar_007/"
   },
   {
     name: "Nithesh Kumar",
     role: "Full stack web developer",
     content:
       "A python based fullstack backend developer with good knowledge in backend and hosting of websites in different platforms.",
-    avatar: "TiSocialLinkedinCircular",
-    linkedIn: "link",
+    avatar: Nktech,
+    linkedIn: "https://www.linkedin.com/in/nitesh-kumar-8a6651221/",
+    Instagram:"https://www.instagram.com/nitesh.kumar.mishra/",
   },
 ];
 
@@ -43,7 +51,7 @@ const backgrounds = [
 ];
 
 function TestmonialCard(props) {
-  const { name, role, content, avatar, index } = props;
+  const { name, role, content, avatar,linkedIn,Instagram, index} = props;
   return (
     <Flex
       boxShadow={"lg"}
@@ -55,6 +63,7 @@ function TestmonialCard(props) {
       justifyContent={"space-between"}
       position={"relative"}
       bg={useColorModeValue("white", "gray.800")}
+      alignItems="center"
       _after={{
         content: '""',
         position: "absolute",
@@ -102,13 +111,36 @@ function TestmonialCard(props) {
           </Text>
         </Text>
       </Flex>
+      <Flex
+      flexDirection="column"
+      
+      
+      >
       <Avatar
+      alignSelf="center"
+      justifySelf="center"
+      alig
         src={avatar}
         height={"80px"}
         width={"80px"}
         alignSelf={"center"}
-        m={{ base: "0 0 35px 0", md: "0 0 0 50px" }}
+        m={{ base: "0 0 10px 0", }}
       />
+     <Flex
+     justifyContent="space-around" 
+     alignItems="center"
+     m={{ base: "0 0 20px 0",}}
+     >
+     <a href={linkedIn} target="_blank">
+    <ImLinkedin size={30} style={{color:"blue"}}/>
+
+     </a>
+    <a href={Instagram}  target="_blank">
+      <BsInstagram size={30}style={{color:"#d6249f" }} />
+   
+      </a> 
+      </Flex>
+</Flex>
     </Flex>
   );
 }
@@ -163,6 +195,7 @@ export default function Aboutus() {
           />
         </Icon>
       </Box>
+      
     </Flex>
   );
 }
