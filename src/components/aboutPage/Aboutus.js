@@ -7,13 +7,12 @@ import {
   useColorModeValue,
   Text,
   Heading,
- 
-  Spacer,
 } from "@chakra-ui/react";
 import Nktech from "../../assets/images/NiteshKumarProfile.jpg"
 import Dexter from "../../assets/images/AkshitAroraProfile.jpg"
 import Koushik from "../../assets/images/KoushikSherugarProfile.jpg"
-
+import {ImLinkedin} from "react-icons/im"
+import {BsInstagram} from "react-icons/bs"
 const testimonials = [
   {
     name: "Akshith Arora",
@@ -132,10 +131,13 @@ function TestmonialCard(props) {
      alignItems="center"
      m={{ base: "0 0 20px 0",}}
      >
-     <a href={linkedIn}><i height="10px" className="fa fa-linkedin-square fa-2x" style={{color:"blue"}}  aria-hidden="true"></i></a>
-    <a href={Instagram}>
-    <i class="fab fa-instagram fa-2x" style={{background: "#d6249f",background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",WebkitBackgroundClip: "text",WebkitTextFillColor:" transparent",
-     }} ></i>
+     <a href={linkedIn} target="_blank">
+    <ImLinkedin size={30} style={{color:"blue"}}/>
+
+     </a>
+    <a href={Instagram}  target="_blank">
+      <BsInstagram size={30}style={{color:"#d6249f" }} />
+   
       </a> 
       </Flex>
 </Flex>
