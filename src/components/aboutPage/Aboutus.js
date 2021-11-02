@@ -132,16 +132,11 @@ function TestmonialCard(props) {
      alignItems="center"
      m={{ base: "0 0 20px 0",}}
      >
-     <i height="10px" onClick={()=>{
-      window.open(linkedIn,"_blank")}}className="fa fa-linkedin-square fa-2x" style={{color:"blue"}}  aria-hidden="true"></i>
-      <i class="fab fa-instagram fa-2x" style={{
-           
-            background: "#d6249f",
-            background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor:" transparent",
-      }} onClick={()=>{
-      window.open(Instagram,"_blank")}}></i>
+     <a href={linkedIn}><i height="10px" className="fa fa-linkedin-square fa-2x" style={{color:"blue"}}  aria-hidden="true"></i></a>
+    <a href={Instagram}>
+    <i class="fab fa-instagram fa-2x" style={{background: "#d6249f",background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",WebkitBackgroundClip: "text",WebkitTextFillColor:" transparent",
+     }} ></i>
+      </a> 
       </Flex>
 </Flex>
     </Flex>
