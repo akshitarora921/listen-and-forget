@@ -134,7 +134,13 @@ function TestmonialCard(props) {
      >
      <i height="10px" onClick={()=>{
       window.open(linkedIn,"_blank")}}className="fa fa-linkedin-square fa-2x" style={{color:"blue"}}  aria-hidden="true"></i>
-      <i class="fab fa-instagram fa-2x" onClick={()=>{
+      <i class="fab fa-instagram fa-2x" style={{
+           
+            background: "#d6249f",
+            background: "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor:" transparent",
+      }} onClick={()=>{
       window.open(Instagram,"_blank")}}></i>
       </Flex>
 </Flex>
